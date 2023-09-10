@@ -1,6 +1,13 @@
+using FormulaOne.DataService.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Get connection string.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+//Initializing my DbContext inside the DI container
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
