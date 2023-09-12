@@ -20,7 +20,7 @@ namespace FormulaOne.DataService.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            //specified the relationship between the entities.
+            //specified the relationship between the entities, in this case one-to-many
             modelBuilder.Entity<Achievment>(entity =>
             {
                 entity.HasOne(d => d.Driver)
