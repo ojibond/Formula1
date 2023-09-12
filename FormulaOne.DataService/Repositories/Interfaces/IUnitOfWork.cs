@@ -11,6 +11,6 @@ namespace FormulaOne.DataService.Repositories.Interfaces
         IDriverRepository Drivers { get; }
         IAchievementRepository Achievements { get; }
 
-        Task CompleteAsync();
+        Task <bool> CompleteAsync();
     }
 }
