@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-latest'
+pool: FormulaOneAgent
+
 
 variables:
   solution: '**/*.sln'
