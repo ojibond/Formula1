@@ -8,9 +8,10 @@ Separation of concern,
 SOLID principles,
 REST principles,
 Dependency Injection,
-Microsoft Azure for CI/CD pipelining 
+Microsoft Azure for CI/CD pipelining.
 
 # Future task:
-Implement user-defined exception handling,
+
+Implement user-defined exception handling, 
 Implement JWT Authentication,
-Implement Background Services (Hangfire)
+Implement Background Services (Hangfire).
