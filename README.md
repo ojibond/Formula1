@@ -5,13 +5,14 @@ Entity framework code-first approach,
 Unit of work concept,
 Automapper to map objects.
 
-A good implementation of:
+# A good implementation of:
   Separation of concern,
   SOLID principles,
   REST principles,
   Dependency Injection,
   Microsoft Azure for CI/CD pipelining 
 
-Future task:
+# Future task:
+Implement user-defined exception handling.
 Implement JWT Authentication,
 Implement Background Services (Hangfire)
