@@ -12,7 +12,7 @@ namespace FormulaOne.DataService.Data
     {
         //Define the db entities
         public virtual DbSet<Driver> Drivers {get; set;}
-        public virtual DbSet<Achievment> Achievments { get; set; }
+        public virtual DbSet<Achievement> Achievments { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -21,7 +21,7 @@ namespace FormulaOne.DataService.Data
             base.OnModelCreating(modelBuilder);
 
             //specified the relationship between the entities, in this case one-to-many
-            modelBuilder.Entity<Achievment>(entity =>
+            modelBuilder.Entity<Achievement>(entity =>
             {
                 entity.HasOne(d => d.Driver)
                 .WithMany(e => e.Achievments)

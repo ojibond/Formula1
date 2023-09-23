@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace FormulaOne.DataService.Repositories.Interfaces
 {
-    public interface IAchievementRepository : IGenericRepository<Achievment>
+    public interface IAchievementRepository : IGenericRepository<Achievement>
     {
-        Task<Achievment?> GetDriverAchievmentAsync(Guid driverId);
+        Task<Achievement?> GetDriverAchievmentAsync(Guid driverId);
     }
 }

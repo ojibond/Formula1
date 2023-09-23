@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace FormulaOne.DataService.Repositories
 {
-    public class AchievementRepository : GenericRepository<Achievment>, IAchievementRepository
+    public class AchievementRepository : GenericRepository<Achievement>, IAchievementRepository
     {
         public AchievementRepository(AppDbContext context, ILogger logger) : base(context, logger)
         { }
 
-        public async Task<Achievment?> GetDriverAchievmentAsync(Guid driverId)
+        public async Task<Achievement?> GetDriverAchievmentAsync(Guid driverId)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace FormulaOne.DataService.Repositories
             }
         }
 
-        public override async Task<IEnumerable<Achievment>> All()
+        public override async Task<IEnumerable<Achievement>> All()
         {
             try
             {
@@ -69,7 +69,7 @@ namespace FormulaOne.DataService.Repositories
             }
         }
 
-        public override async Task<bool> Update(Achievment achievement)
+        public override async Task<bool> Update(Achievement achievement)
         {
             try
             {
