@@ -4,20 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FormulaOne.Entities.DbSet
+namespace FormulaOne.Entities.Dtos.Requests
 {
-    public class Driver : BaseEntity
+    public class UpdateDriverRequest
     {
-        public Driver()
-        {
-            Achievments = new HashSet<Achievement>();
-        }
+        public Guid DriverId { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string Lastname { get; set; } = string.Empty;
         public int DriverNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
-
-        //navigation property
-        public virtual ICollection<Achievement> Achievments { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormulaOne.Entities.DbSet
 {
-    public class Achievment : BaseEntity
+    public class Achievement : BaseEntity
     {
         public int RaceWins { get; set; }
         public int PolePosition { get; set; }

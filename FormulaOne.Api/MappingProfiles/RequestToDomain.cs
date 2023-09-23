@@ -8,7 +8,7 @@ namespace FormulaOne.Api.MappingProfiles
     {
         public RequestToDomain()
         {
-            CreateMap<CreateDriverAchievmentRequest, Achievment>()
+            CreateMap<CreateDriverAchievmentRequest, Achievement>()
                 .ForMember(
                     dest => dest.RaceWins,
                     opt => opt.MapFrom(src => src.Wins))
@@ -22,13 +22,30 @@ namespace FormulaOne.Api.MappingProfiles
                     dest => dest.UpdateDate,
                     opt => opt.MapFrom(src => DateTime.UtcNow));
 
-            CreateMap<UpdateDriverAchievmentRequest, Achievment>()
+            CreateMap<UpdateDriverAchievmentRequest, Achievement>()
                 .ForMember(
                     dest => dest.RaceWins,
                     opt => opt.MapFrom(src => src.Wins))
                 .ForMember(
                     dest => dest.UpdateDate,
                     opt => opt.MapFrom(src => DateTime.UtcNow));
+
+            CreateMap<CreateDriverRequest, Driver>()
+                .ForMember(
+                     dest => dest.Status,
+                     opt => opt.MapFrom(src => 1))
+                .ForMember(
+                    dest => dest.AddedDate,
+                    opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(
+                    dest => dest.UpdateDate,
+                    opt => opt.MapFrom(src => DateTime.UtcNow));
+
+            CreateMap<UpdateDriverRequest, Driver>()
+                .ForMember(
+                    dest => dest.UpdateDate,
+                    opt => opt.MapFrom(src => DateTime.UtcNow));
+
         }
     }
 }
