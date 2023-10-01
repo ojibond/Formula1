@@ -10,8 +10,11 @@ REST principles,
 Dependency Injection,
 Microsoft Azure for CI/CD pipelining.
 
-# Future task:
+# In progress:
 
 Implement user-defined exception handling, 
+
+# Future task:
+
 Implement JWT Authentication,
 Implement Background Services (Hangfire).
