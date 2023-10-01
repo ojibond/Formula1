@@ -1,6 +1,6 @@
 # FormulaOne API 
 
-A fully working Web API in a Microservice architecture with a good implementation of:
+This fully functional Web Api demonstrates the following implementations:
 Entity framework code-first approach,
 Unit of work concept,
 Automapper to map objects,
@@ -12,7 +12,7 @@ Microsoft Azure for CI/CD pipelining.
 
 # In progress:
 
-Implement user-defined exception handling, 
+Implement user-defined exception handling
 
 # Future task:
 
