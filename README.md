@@ -8,8 +8,10 @@ Automapper to map objects,
 Separation of concern,  
 Object-Oriented Programming,  
 SOLID principles,  
-REST principles,<br />  
-Dependency Injection,<br />  
+REST principles,<br />
+Dependency Injection,<br />
+REST principles,<br />
+Dependency Injection,<br />
 Microsoft Azure for CI/CD pipelining.  
 
 # In progress:
