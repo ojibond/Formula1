@@ -10,13 +10,12 @@ Object-Oriented Programming,
 SOLID principles,  
 REST principles,<br />
 Dependency Injection,<br />
-REST principles,<br />
-Dependency Injection,<br />
-Microsoft Azure for CI/CD pipelining.  
+Microsoft Azure for CI/CD pipelining,  
+User-defined exception handling.  
 
 # In progress:
 
-Implement user-defined exception handling
+Configure ILogger to output logs to a specific file.  
 
 # Future task:
 
