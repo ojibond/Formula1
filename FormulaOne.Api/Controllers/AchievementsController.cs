@@ -17,65 +17,43 @@ namespace FormulaOne.Api.Controllers
         [Route("{driverId:Guid}")]
         public async Task<IActionResult> GetDriverAchievements(Guid driverId)
         {
-            try
-            {
-                var driverAchievements = await _unitOfWork.Achievements.GetDriverAchievmentAsync(driverId);
-                if (driverAchievements == null)
-                    return NotFound("Achievements not found");
+            var driverAchievements = await _unitOfWork.Achievements.GetDriverAchievmentAsync(driverId);
 
-                //map driverAchievements to driverAchievementRresponse.
-                var result = _mapper.Map<DriverAchievementResponse>(driverAchievements);
+            if (driverAchievements == null)
+                return NotFound("Achievements not found");
 
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                throw;
-            }                      
+            //map driverAchievements to driverAchievementRresponse.
+            var result = _mapper.Map<DriverAchievementResponse>(driverAchievements);
+
+            return Ok(result);
         }
-
 
         [HttpPost("")]
         public async Task<IActionResult> AddAchievement([FromBody] CreateDriverAchievmentRequest achievement)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-                var result = _mapper.Map<Achievement>(achievement);
+            var result = _mapper.Map<Achievement>(achievement);
 
-                await _unitOfWork.Achievements.Add(result);
-                await _unitOfWork.CompleteAsync();
+            await _unitOfWork.Achievements.Add(result);
+            await _unitOfWork.CompleteAsync();
 
-                return CreatedAtAction(nameof(GetDriverAchievements), new { driverId = result.DriverId }, result);
-            }
-            catch (Exception)
-            {
-                throw;
-            }            
+            return CreatedAtAction(nameof(GetDriverAchievements), new { driverId = result.DriverId }, result);
         }
-
 
         [HttpPut("")]
         public async Task<IActionResult> UpdateAchievements([FromBody] UpdateDriverAchievmentRequest achievement)
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest();
+            if(!ModelState.IsValid)
+                return BadRequest();
 
-                var result = _mapper.Map<Achievement>(achievement);
+            var result = _mapper.Map<Achievement>(achievement);
 
-                await _unitOfWork.Achievements.Update(result);
-                await _unitOfWork.CompleteAsync();
+            await _unitOfWork.Achievements.Update(result);
+            await _unitOfWork.CompleteAsync();
 
-                return NoContent();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return NoContent();
         }
     }
 }
