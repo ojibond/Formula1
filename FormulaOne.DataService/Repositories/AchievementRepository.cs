@@ -20,7 +20,7 @@ namespace FormulaOne.DataService.Repositories
         {
             try
             {
-               return await _dbSet.FirstOrDefaultAsync(x => x.Id == driverId);
+               return await _dbSet.FirstOrDefaultAsync(x => x.DriverId == driverId);
 
             }
             catch (Exception e)
@@ -74,7 +74,7 @@ namespace FormulaOne.DataService.Repositories
             try
             {
                 //Get my entity
-                var result = await _dbSet.FirstOrDefaultAsync(x => x.Id == achievement.Id);
+                var result = await _dbSet.FirstOrDefaultAsync(x => x.DriverId == achievement.DriverId);
 
                 if (result == null)
                     return false;

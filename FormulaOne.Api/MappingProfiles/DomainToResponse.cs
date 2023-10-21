@@ -10,16 +10,13 @@ namespace FormulaOne.Api.MappingProfiles
         public DomainToResponse()
         {
             CreateMap<Achievement, DriverAchievementResponse>()
-                .ForMember(
-                    dest => dest.Wins,
+                .ForMember(dest => dest.Wins,
                     opt => opt.MapFrom(src => src.RaceWins));
 
             CreateMap<Driver, GetDriverResponse>()
-                    .ForMember(
-                     dest => dest.DriverId,
+                    .ForMember(dest => dest.DriverId,
                      opt => opt.MapFrom(src => src.Id))
-                    .ForMember(
-                    dest => dest.FullName,
+                    .ForMember(dest => dest.FullName,
                     opt => opt.MapFrom(src => $"{src.FirstName} {src.Lastname}"));
         }
         
