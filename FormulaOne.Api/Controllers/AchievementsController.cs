@@ -23,6 +23,7 @@ namespace FormulaOne.Api.Controllers
                 if (driverAchievements == null)
                     return ReturnNotFoundResultStatus("Driver's achievements not found. Enter a valid driverId");
 
+
                 //map driverAchievements to driverAchievementRresponse.
                 var result = _mapper.Map<DriverAchievementResponse>(driverAchievements);
 

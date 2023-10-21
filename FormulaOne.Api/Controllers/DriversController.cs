@@ -23,6 +23,7 @@ namespace FormulaOne.Api.Controllers
                 if (driver == null)
                     return ReturnNotFoundResultStatus("Driver not found. Enter a valid driverId");
 
+
                 var result = _mapper.Map<GetDriverResponse>(driver);
 
                 return Ok(result);
@@ -84,6 +85,7 @@ namespace FormulaOne.Api.Controllers
                 var driver = await _unitOfWork.Drivers.All();
 
                 var result = _mapper.Map<IEnumerable<GetDriverResponse>>(driver);
+
 
                 return Ok(result);
             }
