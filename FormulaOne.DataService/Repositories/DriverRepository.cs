@@ -65,6 +65,7 @@ namespace FormulaOne.DataService.Repositories
                 if (result == null)
                     return false;
 
+                result.Id = driver.Id;
                 result.UpdateDate = DateTime.UtcNow;
                 result.DriverNumber = driver.DriverNumber;
                 result.FirstName = driver.FirstName;
