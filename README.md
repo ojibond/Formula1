@@ -1,23 +1,13 @@
-# FormulaOne API 
+# FormulaOne API
 
-This fully functional Web Api demonstrates the following implementations:  
+ASP.NET Core Web API for Formula 1 drivers and achievements, built with a layered architecture and CI/CD on Azure Pipelines.
 
-Entity framework code-first approach,  
-Unit of work concept,  
-Automapper to map objects,  
-Separation of concern,  
-Object-Oriented Programming,  
-SOLID principles,  
-REST principles,<br />
-Dependency Injection,<br />
-Microsoft Azure for CI/CD pipelining,  
-User-defined exception handling.  
+**Stack:** C#, ASP.NET Core, EF Core (code-first), AutoMapper, Azure Pipelines
 
-# In progress:
-
-Configure ILogger to output logs to a specific file.  
-
-# Future task:
-
-Implement JWT Authentication,  
-Implement Background Services (Hangfire).
+## Design
+- **Layers:** FormulaOne.Api (controllers) → FormulaOne.DataService (repositories + Unit of Work) → FormulaOne.Entities (domain models and DTOs)
+- **Data access:** Repository + Unit of Work pattern over EF Core for transactional consistency
+- **Mapping:** AutoMapper separates DTOs from domain entities
+- **DI:** Dependency injection throughout; SOLID and REST principles
+- **Errors:** Custom exception types with centralized handling
+- **CI/CD:** Azure Pipelines build on every push
